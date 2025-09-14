@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini E-commerce de Cursos — João Leonardo</title>
+
+  <!-- AOS (animate on scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- SweetAlert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- Font Awesome (ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <div class="side-header">
+      <h3>Menu</h3>
+      <button id="closeMenu" aria-label="Fechar menu">&times;</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#courses">Cursos</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <button id="openMenu" class="menu-btn" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+    <h1 class="brand">JL Cursos</h1>
+    <div class="header-actions">
+      <button id="btnCart" class="cart-btn" aria-label="Abrir carrinho">
+        <i class="fas fa-shopping-cart"></i> <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero" data-aos="fade-up">
+    <div class="hero-inner">
+      <h2>Aprenda Python, JavaScript e muito mais</h2>
+      <p>Cursos práticos, didáticos e com projetos reais — do básico ao avançado.</p>
+      <a href="#courses" class="btn primary">Ver Cursos</a>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+    <!-- COURSES -->
+    <section id="courses" class="courses section">
+      <h2 data-aos="fade-right">Cursos em destaque</h2>
+      <div class="grid" id="productGrid">
+        <!-- Produtos injetados via script.js -->
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about" data-aos="fade-left">
+      <h2>Sobre</h2>
+      <p>Sou João Leonardo — desenvolvedor e instrutor. Aqui reúno cursos práticos para quem quer entrar no mercado de tecnologia.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact" data-aos="fade-up">
+      <h2>Contato</h2>
+      <p>Fale conosco preenchendo o formulário abaixo:</p>
+
+      <form id="contact-form" class="contact-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn primary">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- CART DRAWER -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Seu Carrinho</h3>
+      <button id="closeCart" aria-label="Fechar carrinho">&times;</button>
+    </div>
+    <div class="cart-body">
+      <table class="cart-table">
+        <thead>
+          <tr><th>Produto</th><th>Qtd</th><th>Preço</th><th>Total</th><th></th></tr>
+        </thead>
+        <tbody id="cartItems">
+          <!-- Linhas via JS -->
+        </tbody>
+      </table>
+    </div>
+    <div class="cart-footer">
+      <div>Total: <strong id="total">R$ 0,00</strong></div>
+      <div class="cart-actions">
+        <button id="checkout" class="btn primary">Finalizar Compra</button>
+        <button id="clearCart" class="btn">Limpar</button>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <p>© 2025 João Leonardo. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+  </script>
+</body>
+</html>
